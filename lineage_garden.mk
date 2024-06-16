@@ -24,7 +24,7 @@ $(call inherit-product, vendor/lineage/config/common_full_go_phone.mk)
 # Some build flags
 TARGET_BOOT_ANIMATION_RES := 720
 TARGET_FACE_UNLOCK := true
-TARGET_USES_BLUR := true
+TARGET_USES_BLUR := false
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 
