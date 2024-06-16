@@ -1,5 +1,5 @@
 # device_xiaomi_garden
-a11 tree, with supports a kuroneko kernel, and tweaked a lot. 
+a11 tree, with supports kuroneko kernel, and tweaked a lot. 
 
 ## Included devices
 
