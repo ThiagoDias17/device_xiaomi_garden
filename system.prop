@@ -10,7 +10,7 @@ ro.config.system_vol_steps=15
 ro.config.ring_notification_vol_steps=15
 
 # Brand
-Build.BRAND=MTK
+ro.product.brand=Xiaomi
 
 # Bluetooth
 persist.bluetooth.bluetooth_audio_hal.disabled=true
@@ -33,12 +33,11 @@ dalvik.vm.boot-dex2oat-cpu-set=4,5,6,7
 dalvik.vm.boot-dex2oat-threads=4
 dalvik.vm.image-dex2oat-cpu-set=4,5,6,7
 dalvik.vm.image-dex2oat-threads=4
-dalvik.vm.heapmaxfree=2m
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heapsize=512m
 
 # Display
 debug.sf.disable_backpressure=1
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.has_wide_color_display=true
 ro.opengles.version=196610
 ro.zygote.preload.enable=0
 vendor.display.enable_default_color_mode=0
@@ -63,6 +62,8 @@ ro.am.reschedule_service=true
 ro.mtk_perf_fast_start_win=1
 ro.mtk_perf_response_time=1
 ro.mtk_perf_simple_start_win=1
+ro.sys.fw.use_trim_settings=1
+persist.sys.ui.hw=1
 
 # Graphics
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
@@ -85,10 +86,6 @@ debug.sf.early.sf.duration=27600000
 debug.sf.early.app.duration=20000000
 debug.sf.earlyGl.sf.duration=27600000
 debug.sf.earlyGl.app.duration=20000000
-persist.service.lgospd.enable=0
-persist.service.pcsync.enable=0
-debug.sf.disable_client_composition_cache=1
-persist.wm.enable_remote_keyguard_animation=0
 
 # Radio
 persist.internalAntenna.enable=true
@@ -141,6 +138,7 @@ ro.config.dha_th_rate=2.3
 ro.config.sdha_apps_bg_max=32
 ro.config.sdha_apps_bg_min=8
 ro.config.low_ram=true
+ro.config.kill_heaviest_task=true
 
 # WFD
 persist.sys.wfd.nohdcp=1
@@ -166,18 +164,28 @@ dalvik.vm.execution-mode=int:jit
 dalvik.vm.checkjni=false
 proximity_incall=enable
 persist.sys.purgeable_assets=1
-ro.config.hw_fast_dormancy=1
+ro.config.hw_fast_dormancy=0
 ro.mot.eri.losalert.delay=1000
 debug.kill_allocating_task=0
 persist.sys.use_dithering=1
 debug.renderengine.backend=skiaglthreaded
 
+# System Perf
+ro.sys.performance.mode=1
+ro.vendor.performance.qos=1
+
+# Storage Perf
+ro.sys.storage.preload=1
+ro.config.storage.preload=1
+
+# Network Perf
+ro.config.hw_lte=1
+ro.config.hw_wifi=1
+
 # GPU Perf
-force_hw_ui=true
-ro.sf.compbypass.enable=0
 hwui.render_dirty_regions=false
 debug.sf.latch_unsignaled=1
-persist.sys.use_16bpp_alpha=1
+persist.sys.use_16bpp_alpha=0
 ro.config.enable.hw_accel=true
 hw2d.force=1
 ro.product.gpu.driver=1
@@ -187,36 +195,33 @@ sys.use_fifo_ui=1
 debug.gralloc.enable_fb_ubwc=1
 debug.sf.hw=1
 debug.overlayui.enable=1
-debug.egl.profiler=1
-debug.egl.swapinterval=-60
 persist.sys.ui.hw=1
 ro.fb.mode=1
-ro.config.hw_quickpoweron=true
-video.accelerate.hw=1
 ro.config.disable.hw_accel=false
 hw3d.force=1
+ro.gpu_perf_mode=1
+ro.hwui.texture_cache_size=64
+ro.hwui.layer_cache_size=32
+ro.hwui.path_cache_size=16
+persist.sys.gpu.scaling_governor=interactive
 
 # Touch improvements
-touch.pressure.scale=0.001 
-persist.sys.ui.hw=1 
-touch.size.calibration=diameter 
-touch.size.scale=1 
-touch.size.bias=0 
-touch.size.isSummed=0 
-touch.pressure.scale=0.001 
-touch.orientation.calibration=none 
-touch.distance.calibration=none 
-touch.distance.scale=0 
-touch.coverage.calibration=box 
-touch.gestureMode=spots 
-MultitouchSettleInterval=1ms 
-MultitouchMinDistance=1px 
-TapInterval=1ms 
+touch.pressure.scale=0.001
+touch.size.calibration=diameter
+touch.size.scale=1
+touch.size.bias=0
+touch.size.isSummed=0
+touch.orientation.calibration=none
+touch.distance.calibration=none
+touch.distance.scale=0
+touch.coverage.calibration=box
+touch.gestureMode=spots
+MultitouchSettleInterval=1ms
+MultitouchMinDistance=1px
+TapInterval=1ms
 TapSlop=1px
 
 # Blurs
-ro.surface_flinger.supports_background_blur=1
-ro.sf.blurs_are_expensive=1
 persist.sys.sf.disable_blurs=1
 
 # Improve overall media quality
