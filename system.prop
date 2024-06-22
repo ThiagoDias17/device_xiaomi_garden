@@ -127,7 +127,6 @@ debug.stagefright.ccodec=0
 ro.sys.fw.bservice_enable=true
 ro.sys.fw.bservice_limit=5
 ro.sys.fw.bservice_age=5000
-ro.am.reschedule_service=true
 ro.config.fha_enable=true
 ro.sys.fw.bg_apps_limit=8
 ro.config.dha_cached_max=16
